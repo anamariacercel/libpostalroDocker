@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /
 RUN git clone https://github.com/anamariacercel/libpostalro
-WORKDIR /libpostal
+WORKDIR /libpostalro
 RUN git checkout $COMMIT
 COPY ./libpostal.sh .
 RUN ./libpostal.sh
@@ -18,4 +18,4 @@ RUN ./libpostal_rest.sh
 
 EXPOSE 8080
 
-CMD /libpostal/workspace/bin/libpostal-rest
+CMD /libpostalro/workspace/bin/libpostal-rest
